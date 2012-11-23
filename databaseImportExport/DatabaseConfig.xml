@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databases>
+	<database>
+		<name>Test1</name>
+		<connectionString>teststring</connectionString>
+	</database>
+
+	<database>
+		<name>Test2</name>
+		<connectionString>teststring2</connectionString>
+	</database>
+</databases>

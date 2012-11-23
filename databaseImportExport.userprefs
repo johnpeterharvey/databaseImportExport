@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="databaseImportExport/DBConnection.cs">
+    <Files>
+      <File FileName="databaseImportExport/Main.cs" Line="45" Column="5" />
+      <File FileName="databaseImportExport/DatabaseConfig.xml" Line="10" Column="20" />
+      <File FileName="databaseImportExport/DBConnection.cs" Line="7" Column="78" />
+      <File FileName="databaseImportExport/DBTable.cs" Line="6" Column="78" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
