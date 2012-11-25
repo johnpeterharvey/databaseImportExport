@@ -10,22 +10,44 @@ namespace databaseImportExport
 {
 	class MainClass
 	{
-		private static OracleConnection dbConn;
 
 		public static void Main (string[] args)
 		{
-			Dictionary<String, String> availableDBs = getDBList();
+			OracleConnection dbConn = askUserForDatabase();
 
 
-
-			Console.WriteLine("Please specify database to connect to:");
-			Console.WriteLine("\t");
-			Console.ReadLine();
 		}
 
-		public static void getDBConnection ()
+		public static OracleConnection askUserForDatabase ()
 		{
+			Dictionary<String, String> availableDBs = getDBList();
 
+			Console.WriteLine ("Please specify database to connect to:");
+
+			String[] dbNames = (String[]) availableDBs.Keys.ToArray();
+			int count = 0;
+			foreach (String name in dbNames)
+			{
+				Console.WriteLine("\t" + count.ToString() + " - " + name);
+				count++;
+			}
+			Console.WriteLine();
+			String enteredVal = Console.ReadLine();
+
+			int enteredValInt = int.Parse(enteredVal);
+			if (enteredValInt < 0 || enteredValInt > dbNames.Length - 1)
+				return null;
+			String connString = null;
+			availableDBs.TryGetValue(dbNames[enteredValInt], out connString);
+
+			return getDBConnection(connString);
+		}
+
+		public static OracleConnection getDBConnection (String connectionString)
+		{
+			OracleConnection dbConn = new OracleConnection(connectionString);
+			dbConn.Open();
+			return dbConn;
 		}
 
 		public static Dictionary<String, String> getDBList ()
@@ -39,11 +61,11 @@ namespace databaseImportExport
 			};
 
 			Dictionary<String, String> results = new Dictionary<String, String> ();
+			//TODO lambda?
 			foreach (var val in data)
 			{
-
+				results.Add (val.name, val.connString);
 			}
-
 			return results;
 		}
 	}
