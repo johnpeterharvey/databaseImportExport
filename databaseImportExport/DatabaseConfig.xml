@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <databases>
 	<database>
-		<name>Test1</name>
-		<connectionString>teststring1</connectionString>
+		<name>wmsdev54</name>
+		<connectionString>jdbc:oracle:thin:@//cit-wmsdb03:1521/WMSDEV54</connectionString>
 	</database>
 
 	<database>
